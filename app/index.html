@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="smARTin">
+  <meta name="description" content="Visitor Counter">
+  <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/921/921490.png?semt=ais_hybrid">
+
+  <title>Visitor counter</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/4.0/examples/sticky-footer/sticky-footer.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="container">
+      <h1 class="mt-5">Visitor counter</h1>
+      <p class="lead">This is javascript visitor counter page</p>
+      <p>This page has been visited <span id="visitCount"></span> times.</p>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">by smARTin 2024</span>
+      </div>
+    </footer>
+
+    <script>
+        // Fetch the visit count from the server
+        fetch('/visits?' + new Date().getTime())  // Add a timestamp to the request
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visitCount').innerText = data.visitCount;
+            })
+            .catch(error => {
+                console.error('Error fetching visit count:', error);
+            });
+    </script>
+
+</body>
+
+</html>
