@@ -4,7 +4,7 @@ App counts every page load, so no session based.
 
 
 # Build 
-Navigate to folder "Level_1_app" and build your app image using `docker build -t visitor-counter-app .`
+Build your app image using `docker build -t visitor-counter-app .`
 Image will be built locally.
 
 # Operation
